@@ -1,0 +1,8 @@
+.ant-layout-header {
+  color: #fff;
+  background: #7dbcea;
+}
+
+.ant-table-thead > tr > th {
+  background: #7dbcea !important;
+}
