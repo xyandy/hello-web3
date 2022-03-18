@@ -1,75 +1,31 @@
-import { Button, Col, Divider, Layout, Row, Table } from 'antd';
+import { Divider, Layout } from 'antd';
 import 'antd/dist/antd.css';
+import { useState } from 'react';
+import Web3Header from './components/Web3Header';
+import Web3Table from './components/Web3Table';
 import './index.css';
 
 const { Header, Content } = Layout;
 
 function App() {
-  const columns = [
-    {
-      title: 'Address',
-      dataIndex: 'address',
-      key: 'address'
-    },
-    {
-      title: 'Count',
-      dataIndex: 'count',
-      key: 'count'
-    }
-  ];
-  const data = [
-    {
-      key: '1',
-      count: 2,
-      address: '0x237128'
-    },
-    {
-      key: '2',
-      count: 42,
-      address: '0x123'
-    },
-    {
-      key: '3',
-      count: 32,
-      address: '0x321'
-    }
-  ];
-
-  const connectWallet = async () => {
-    alert('connectWallet');
-  };
-
-  const addCount = async () => {
-    alert('addCount');
-  };
+  const [account, setAccount] = useState('');
 
   return (
-    <>
-      <Layout>
-        <Header>
-          <Row>
-            <Col span={22}>
-              <h1>Hello Web3</h1>
-            </Col>
-            <Col span={2}>
-              <Button type='primary' size='large' onClick={connectWallet}>
-                Connect Wallet
-              </Button>
-            </Col>
-          </Row>
-        </Header>
+    <Layout>
+      <Header>
+        <Web3Header setAccount={setAccount} />
+      </Header>
+      <Divider />
 
+      {account.length === 0 ? (
+        <h1>Please Collect Wallet</h1>
+      ) : (
         <Content>
-          <Divider />
-          <Button size='large' onClick={addCount}>
-            Add Your Account Count
-          </Button>
-          <Divider />
-
-          <Table columns={columns} dataSource={data} bordered />
+          <h1>Your Account: {account}</h1>
+          <Web3Table />
         </Content>
-      </Layout>
-    </>
+      )}
+    </Layout>
   );
 }
 
