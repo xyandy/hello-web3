@@ -1,21 +1,24 @@
 # hello-web3
 
-## 介绍
-这个是一个Web3入门的Demo Dapp，主要包括了以下几个方面
+## Introduction
+This is a Demo Dapp for getting started with Web3, which mainly includes the following aspects:
 
-1. 编写一个简单的solidity合约
-2. 利用hardhat编译合约，部署合约到本地
-3. web前端界面和MetaMask交互，从而进行读写合约
+1. Write a simple solidity smart contract
+2. Use hardhat to compile the contract and deploy the contract in localhost
+3. Use web frontend to interact with MetaMask, reading and writing the smart contract
 
-## Demo说明
-如下图所示
+## Demo Description
+
+Pictures are as follows:
 ![web1](./imgs/web1.png)
 ![web2](./imgs/web2.png)
-本地启动npm start项目，然后可以操作2个按钮，一个是Collect Wallet，另一个是Add Count
 
-初始化时候你的账户/地址Count为0，每次点击Add Count按钮，Count边会加1，然后你过一会刷新浏览器就能看到表格的Count
+Use `npm start` cmd to start this project. And you can see two buttons, one is `Collect Wallet` and the other one is `Add Count`
 
-## 知识预备
+In the beginning, the count of your wallet account is 0. Each time the Add Count button is clicked, the Count will be incremented by 1. And then you will see the latest count number if you refresh your browser
+
+
+## Knowledge Prerequisite
 
 1. js html css
 2. react antd
@@ -24,42 +27,41 @@
 5. ethers
 6. MetaMask
 
-# 步骤
-1. 创建react app
+# Steps to develop the project
+1. create react app
 
-  npx create-react-app hello-web3
-  删除无用文件，只保留index.html App.js index.js 保证项目能够npm start启动就好
+  `npx create-react-app hello-web3`
+  delete useless files except index.html App.js index.js and make sure you can `npm start` the project
 
-  代码可参考commit记录
+  you can see codes via this commit records
   https://github.com/xuyang1996/hello-web3/tree/b1ca7e4ee8c2a53ba84ec85e0bfe8a187d8f12f3
 
 
-2. 创建hardhat环境
+2. create hardhat environment
 
-  npm install --save-dev hardhat
-  参考 https://hardhat.org/getting-started/
+  `npm install --save-dev hardhat`
+  refer to official doc https://hardhat.org/getting-started/
 
-  代码可参考commit记录
+  you can see codes via this commit records
   https://github.com/xuyang1996/hello-web3/tree/09e7164a60a2ef81c4f0e2b294c6e26f78206038
 
    
-3. 编写合约,部署合约脚本
+3. write and deploy the smart contract
  
-  启动node节点并且部署写好的AddrCounter合约脚本
-  npx hardhat node
-  npx hardhat run scripts/deploy.js --network localhost
+  `npx hardhat node`
+  `npx hardhat run scripts/deploy.js --network localhost`
   
-  代码可参考commit记录
+  you can see codes via this commit records
   https://github.com/xuyang1996/hello-web3/commit/0c0e8596cc3fc34817a329971680df7549e8d413
 
-4. 写好前端界面
+4. write basic web front-end ui via react, js and antd
    
-  代码可参考commit记录
+  you can see codes via this commit records
   https://github.com/xuyang1996/hello-web3/tree/d326c9164d35f18a3003210d7fdbcf7e4dc3d1da
 
-5. 写好ethers, MetaMask交互合约的部分并且完善前端界面
+5. interact with MetaMask, smart contract
 
-  代码可参考commit记录
+  you can see codes via this commit records
   https://github.com/xuyang1996/hello-web3/tree/bf667da0dfa98fcfbd0558f2287d29cb0849d7ab
    
 
